@@ -76,11 +76,30 @@ Shinsuke Sakai
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-cc <- PlateR6()
+#Kouzou Kenzensei Hyouka Handbook
+#subject 2.5
+a<-0.02; cc<-0.015;
+cc <- PlateR6(a = a, cc = cc, t = 0.04, b = 0.1, P=2.7e6,M=0)
 cat("Kr=",cc[1],",Lr=",cc[2])
 DrawR6(cc[1],cc[2])
 # solution
-Kr= 0.2419479 ,Lr= 0.7007032
+#Kr= 0.3266297 ,Lr= 0.9459494
+
+#subject 2.6
+a<-0.02; cc<-0.015;
+for(i in 1:300000){
+  Kmax<-Raju_Newman(a = a, cc = cc, t = 0.04, b = 0.1, P=8e5,M=0)
+  da<-dadN1(R=0.0,dK=Kmax$KA/1e6)/1e3
+  dc<-dadN1(R=0.0,dK=Kmax$KB/1e6)/1e3
+  a<-a+da
+  cc<-cc+dc
+  #cat(i,"a=",a,"2c=",cc*2,"\n")
+}
+cat("a=",a,"2c=",cc*2)
+#expected solution
+#a= 0.03044039 2c= 0.07068406
+res<-PlateR6(E = 1.92e+11, nu = 0.3, Su = 4.9e+08, Sy = 2.7e+08, J1c = 1e+05, a = a, cc = cc,  t = 0.04, b = 0.1, P=2.7e6, M = 0)
+DrawR6(res[1],res[2])
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

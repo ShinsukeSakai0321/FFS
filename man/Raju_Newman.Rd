@@ -9,7 +9,7 @@ Calculation of Stress Intensity Factor by Raju-Newman method
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-Raju_Newman(a = 0.006, cc = 0.006, t = 0.01, b = 0.025, sm = 2e+08, sb = 0)
+Raju_Newman(a = 0.006, cc = 0.006, t = 0.01, b = 0.025, P=0.1e6,M=0.0)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
