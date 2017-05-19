@@ -77,10 +77,10 @@ Shinsuke Sakai
 }
 \examples{
 cc <- PlateR6()
-cc
+cat("Kr=",cc[1],",Lr=",cc[2])
 DrawR6(cc[1],cc[2])
 # solution
-[1] 0.2419479 0.7007032
+Kr= 0.2419479 ,Lr= 0.7007032
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
