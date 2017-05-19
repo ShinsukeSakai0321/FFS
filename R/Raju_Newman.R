@@ -1,5 +1,7 @@
 Raju_Newman <- function(a=0.006,cc=0.006,t=0.01,b=0.025,
-                        sm=200e6,sb=0.0){
+                        P=0.1e6,M=0.0){
+  sm <- P/(b*2*t)
+  sb <- 3*M/(b*t*t)
   Q <- 1+1.464*(a/cc)^1.65
   g<-1; fp<-1
   fw <- sqrt(1.0/cos(pi*cc/(2*b)*sqrt(a/t)))

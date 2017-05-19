@@ -1,35 +1,52 @@
-\name{Raju_Newman}
-\alias{Raju_Newman}
+\name{PlateR6}
+\alias{PlateR6}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 %%  ~~function to do ... ~~
-Calculation of Stress Intensity Factor by Raju-Newman method
+R6 analysis for Surface Cracks in Plates
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
+K-solution:  Raju_Newman method
+L-solution:  Dillstrom, P.and Sattari-Far
 }
 \usage{
-Raju_Newman(a = 0.006, cc = 0.006, t = 0.01, b = 0.025, sm = 2e+08, sb = 0)
+PlateR6(E = 1.92e+11, nu = 0.3, Su = 4.9e+08, Sy = 2.7e+08, J1c = 1e+05, a = 0.02, cc = 0.015, b = 0.1, t = 0.04, P = 2e+06, M = 0)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{a}{crack depth
+  \item{E}{
+%%     ~~Describe \code{E} here~~
+}
+  \item{nu}{
+%%     ~~Describe \code{nu} here~~
+}
+  \item{Su}{
+%%     ~~Describe \code{Su} here~~
+}
+  \item{Sy}{
+%%     ~~Describe \code{Sy} here~~
+}
+  \item{J1c}{
+%%     ~~Describe \code{J1c} here~~
+}
+  \item{a}{
 %%     ~~Describe \code{a} here~~
 }
-  \item{cc}{half crack width
+  \item{cc}{
 %%     ~~Describe \code{cc} here~~
 }
-  \item{t}{thickness of plate
-%%     ~~Describe \code{t} here~~
-}
-  \item{b}{half width of plate
+  \item{b}{
 %%     ~~Describe \code{b} here~~
 }
-  \item{sm}{maen component of applied stress
-%%     ~~Describe \code{sm} here~~
+  \item{t}{
+%%     ~~Describe \code{t} here~~
 }
-  \item{sb}{bending component of applied stress
-%%     ~~Describe \code{sb} here~~
+  \item{P}{
+%%     ~~Describe \code{P} here~~
+}
+  \item{M}{
+%%     ~~Describe \code{M} here~~
 }
 }
 \details{
@@ -57,21 +74,13 @@ Shinsuke Sakai
 
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-
-
 }
 \examples{
-# Kouzou Kenzensei Hyouka Handbook
-#Kyouritsu Syuppan P.369 Subject No.2.1
-k1 <- Raju_Newman()/1e6
-t<-0.01;b<-0.025
-P<-2e7*2*b*t
-k2 <- Raju_Newman(P=P)/1e6
-dkA <- k1$KA-k2$KA
-dkB <- k1$KB-k2$KB
-c(dkA,dkB)
-#correct answer
-#[1] 17.67812 21.67337
+cc <- PlateR6()
+cc
+DrawR6(cc[1],cc[2])
+# solution
+[1] 0.2419479 0.7007032
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
