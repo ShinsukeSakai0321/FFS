@@ -16,3 +16,29 @@ Raju_Newman <- function(a=0.006,cc=0.006,t=0.01,b=0.025,
   data.frame(KA=KA,KB=KB)
 }
 
+ASME_N_513<- function(Rm=0.06,t=0.01,th=pi/6,M=1.96e4){
+  #K-2-k-2
+  aa<-Rm/t
+  Abg<- -3.6543+1.52784*aa-0.072098*aa^2+0.0016011*aa^3
+  Bbg<- 11.36322-3.91412*aa+0.18619*aa^2-0.004099*aa^3
+  Cbg<- -3.18609+3.84763*aa-0.18304*aa^2+0.00403*aa^3
+  tt <- th/pi
+  Fbg <- 1+Abg*tt^1.5+Bbg*tt^2.5+Cbg*tt^3.5
+  M/(pi*Rm*Rm*t)*sqrt(pi*Rm*th)*Fbg
+}
+ZahoorK2b2<-function(Ro=291e-3,Ri=275e-3,p=8e6,a=11e-3){
+  #K-2-b-2
+  t<-Ro-Ri
+  sm<-2*Ro*Ro*p/(Ro*Ro-Ri*Ri)
+  rr<-a/t
+  A<-0.0
+  if(Ri/t<=10 && Ri/t>=5){
+    A<-(0.125*(Ri/t)-0.25)^0.25
+  }
+  if(Ri/t<=20 && Ri/t>=10){
+    A<-(0.2*(Ri/t)-1)^0.25
+  }
+  FF<-1.1+A*(4.951*rr*rr+1.092*rr*rr*rr*rr)
+  FF*sm*sqrt(pi*a)
+}
+

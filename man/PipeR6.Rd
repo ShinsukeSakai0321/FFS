@@ -1,5 +1,5 @@
-\name{PlateR6}
-\alias{PlateR6}
+\name{PipeR6}
+\alias{PipeR6}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 %%  ~~function to do ... ~~
@@ -8,13 +8,12 @@ R6 analysis for Surface Cracks in Plates
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 \itemize{
-\item{K-solution:  Raju_Newman method}
-\item{L-solution:  Dillstrom, P.and Sattari-Far}
+\item {K-solution:  ASME CODE case N513:}
+\item {L-solution:  Zahoor's solution}
 }
-
 }
 \usage{
-PlateR6(E = 1.92e+11, nu = 0.3, Su = 4.9e+08, Sy = 2.7e+08, J1c = 1e+05, a = 0.02, cc = 0.015, b = 0.1, t = 0.04, P = 2e+06, M = 0)
+PipeR6(E = 1.9208e+11, nu = 0.3, Su = 4.9e+08, Sy = 313600000, J1c = 784000, Rm = 0.06, t = 0.01, th = pi/6, M = 19600)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -33,20 +32,14 @@ PlateR6(E = 1.92e+11, nu = 0.3, Su = 4.9e+08, Sy = 2.7e+08, J1c = 1e+05, a = 0.0
   \item{J1c}{
 %%     ~~Describe \code{J1c} here~~
 }
-  \item{a}{
-%%     ~~Describe \code{a} here~~
-}
-  \item{cc}{
-%%     ~~Describe \code{cc} here~~
-}
-  \item{b}{
-%%     ~~Describe \code{b} here~~
+  \item{Rm}{
+%%     ~~Describe \code{Rm} here~~
 }
   \item{t}{
 %%     ~~Describe \code{t} here~~
 }
-  \item{P}{
-%%     ~~Describe \code{P} here~~
+  \item{th}{
+%%     ~~Describe \code{th} here~~
 }
   \item{M}{
 %%     ~~Describe \code{M} here~~
@@ -64,7 +57,12 @@ PlateR6(E = 1.92e+11, nu = 0.3, Su = 4.9e+08, Sy = 2.7e+08, J1c = 1e+05, a = 0.0
 }
 \references{
 %% ~put references to the literature/web site here ~
+\itemize{
+\item {K(K-2-k-2): ASME Boiler and Pressure Vessel Code, Code Case N-513, Evaluation Criteria for Temporary Acceptance of Flaws in Class 3 Pipint,1997}
+\item{L(L-2-k):Zahoor A.,Final Report on EPRI Project, T118-9-1,December 1982}
 }
+}
+
 \author{
 %%  ~~who you are~~
 Shinsuke Sakai
@@ -80,31 +78,13 @@ Shinsuke Sakai
 }
 \examples{
 #Kouzou Kenzensei Hyouka Handbook
-#subject 2.5
-a<-0.02; cc<-0.015;
-cc <- PlateR6(Su = 4.9e+08, Sy = 2.7e+08,a = a, cc = cc, t = 0.04, b = 0.1, P=2.7e6,M=0)
-cat("Kr=",cc[1],",Lr=",cc[2])
-cat("Safety Margin=",SafetyMargin(Kr=cc[1],Lr=cc[2]))
-DrawR6(cc[1],cc[2],Su = 4.9e+08, Sy = 2.7e+08)
-# solution
-#Kr= 0.3266297 ,Lr= 0.9459494
-
-#subject 2.6
-a<-0.02; cc<-0.015;
-for(i in 1:300000){
-  Kmax<-Raju_Newman(a = a, cc = cc, t = 0.04, b = 0.1, P=8e5,M=0)
-  da<-dadN1(R=0.0,dK=Kmax$KA/1e6)/1e3
-  dc<-dadN1(R=0.0,dK=Kmax$KB/1e6)/1e3
-  a<-a+da
-  cc<-cc+dc
-  #cat(i,"a=",a,"2c=",cc*2,"\n")
-}
-cat("a=",a,"2c=",cc*2)
-#expected solution
-#a= 0.03044039 2c= 0.07068406
-res<-PlateR6(Su = 4.9e+08, Sy = 2.7e+08, a = a, cc = cc,  t = 0.04, b = 0.1, P=2.7e6, M = 0)
-DrawR6(Kr=res[1],Lr=res[2],Su = 4.9e+08, Sy = 2.7e+08)
-cat("Safety Margin=",SafetyMargin(Kr=res[1],Lr=res[2]))
+# subject 4.3
+# case 1
+aa <- PipeR6()
+DrawR6(aa[1],aa[2])
+# case 2
+aa<-PipeR6(E = 1.9208e+11, nu = 0.3, Su = 4.9e+08, Sy = 313600000, J1c = 784000, Rm = 0.2, t = 0.016, th = pi/6, M = 7.84e5)
+DrawR6(aa[1],aa[2])
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
