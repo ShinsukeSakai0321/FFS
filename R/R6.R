@@ -21,7 +21,7 @@ PipeLCrackR6<-function(Ro=291e-3,Ri=275e-3,p=8e6,a=11e-3,Su=618e6,Sy=514e6,K1c=1
   Lr<-KumarPipe(Ro=Ro,Ri=Ri,p=p,a=a,Su=Su,Sy=Sy)
   c(Kr,Lr)
 }
-DrawR6 <- function(Kr=0.3,Lr=0.5,Su=590e6,Sy=313.6e6){
+DrawR6 <- function(Kr=0.3,Lr=0.5,Su=590e6,Sy=313.6e6,pch=16){
   Lrmax=(Su+Sy)/2/Sy
   div <- 1000
   Lmax <- Lrmax
@@ -30,7 +30,7 @@ DrawR6 <- function(Kr=0.3,Lr=0.5,Su=590e6,Sy=313.6e6){
   KK<-R6Option1(LL)
   plot(LL,KK,type="l",xlim=c(0.0,1.6),ylim=c(0.0,1.2),xlab="Lr",ylab="Kr")
   par(new=T)
-  plot(Lr,Kr,pch=16,xlim=c(0.0,1.6),ylim=c(0.0,1.2))
+  plot(Lr,Kr,pch=pch,xlim=c(0.0,1.6),ylim=c(0.0,1.2))
   abline(h=0,v=0)
   segments(Lrmax,0,Lrmax,R6Option1(Lrmax))
 }
@@ -44,4 +44,8 @@ SafetyMargin<-function(Kr=0.3,Lr=0.5){
   }
   aa<-uniroot(f, c(0, 1.6))
   aa$root/Lr
+}
+RolfeBarsom<-function(Cv=47.5,Sy=514e6){
+  k1c<-sqrt(0.6478*(Cv*1e6/Sy-0.0098))*Sy
+  return(k1c)
 }

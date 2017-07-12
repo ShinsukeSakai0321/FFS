@@ -17,6 +17,7 @@ ZahoorPipe <- function(Rm=0.06,t=0.01,th=pi/6,M=1.96e4,Su=490e6,Sy=313.6e6){
 }
 
 KumarPipe <- function(Ro=291e-3,Ri=275e-3,p=8e6,a=11e-3,Su=618e6,Sy=514e6){
+  #L-2-b
   t<-Ro-Ri
   zeta<-a/t
   sf<-(Su+Sy)/2

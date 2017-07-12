@@ -82,10 +82,10 @@ Shinsuke Sakai
 #Kouzou Kenzensei Hyouka Handbook
 #subject 2.5
 a<-0.02; cc<-0.015;
-cc <- PlateR6(Su = 4.9e+08, Sy = 2.7e+08,a = a, cc = cc, t = 0.04, b = 0.1, P=2.7e6,M=0)
-cat("Kr=",cc[1],",Lr=",cc[2])
-cat("Safety Margin=",SafetyMargin(Kr=cc[1],Lr=cc[2]))
-DrawR6(cc[1],cc[2],Su = 4.9e+08, Sy = 2.7e+08)
+res <- PlateR6(Su = 4.9e+08, Sy = 2.7e+08,a = a, cc = cc, t = 0.04, b = 0.1, P=2.7e6,M=0)
+cat("Kr=",res[1],",Lr=",res[2])
+cat("Safety Margin=",SafetyMargin(Kr=res[1],Lr=res[2]))
+DrawR6(res[1],res[2],Su = 4.9e+08, Sy = 2.7e+08)
 # solution
 #Kr= 0.3266297 ,Lr= 0.9459494
 

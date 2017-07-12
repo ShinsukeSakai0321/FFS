@@ -49,7 +49,7 @@ Raju_newman command for the calculation of stress intensity factor
 # Kouzou Kenzensei Hyouka Handbook
 #Kyouritsu Syuppan P.369 Subject No2.2
 k1 <- Raju_Newman()/1e6
-k2 <- Raju_Newman(sm=2e7)/1e6
+k2 <- Raju_Newman(P=0.01e6)/1e6
 dkA <- k1$KA-k2$KA
 dkB <- k1$KB-k2$KB
 dadN1(dK=dkA)

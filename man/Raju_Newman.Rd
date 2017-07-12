@@ -25,10 +25,10 @@ Raju_Newman(a = 0.006, cc = 0.006, t = 0.01, b = 0.025, P=0.1e6,M=0.0)
   \item{b}{half width of plate
 %%     ~~Describe \code{b} here~~
 }
-  \item{sm}{maen component of applied stress
+  \item{P}{Applied load
 %%     ~~Describe \code{sm} here~~
 }
-  \item{sb}{bending component of applied stress
+  \item{M}{Applied bending moment
 %%     ~~Describe \code{sb} here~~
 }
 }
