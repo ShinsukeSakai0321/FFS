@@ -105,7 +105,21 @@ cat("a=",a,"2c=",cc*2)
 res<-PlateR6(Su = 4.9e+08, Sy = 2.7e+08, a = a, cc = cc,  t = 0.04, b = 0.1, P=2.7e6, M = 0)
 DrawR6(Kr=res[1],Lr=res[2],Su = 4.9e+08, Sy = 2.7e+08)
 cat("Safety Margin=",SafetyMargin(Kr=res[1],Lr=res[2]))
+
+# Example of probabilistic fracture mechanics
+n<-500
+a<-rnorm(n,mean=0.02,sd=0.02*0.2)
+cc<-rnorm(n,mean=0.015,sd=0.015*0.2)
+P<-rnorm(n,mean=2.7e6,sd=2.7e6*0.1)
+Sy<-rnorm(n,mean=2.7e8,sd=2.7e8*0.05)
+for(i in 1:n){
+  res <- PlateR6(Su = 4.9e+08, Sy = Sy[i],a = a[i], cc = cc[i], t = 0.04, b = 0.1, P=2.7e6,M=0)
+  DrawR6(res[1],res[2],Su = 4.9e+08, Sy = 2.7e+08) ; par(new=T)
 }
+}
+
+
+
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
