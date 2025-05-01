@@ -43,7 +43,8 @@ print(K.GetRefer())
 ```
 出力例   
 平板の半楕円表面亀裂，Raju-Newmanの解   
-Newman,J.C>Jr., and Raju,I.S.:Stress-Intensity Factor Equations for Cracks in Three-Dimentional Finite Bodies Subjected to Tension and Bending Loads, NASA Technical Memorandum, 85793, NASA,1984
+Newman,J.C>Jr., and Raju,I.S.:Stress-Intensity Factor Equations for Cracks in Three-Dimentional Finite Bodies Subjected to Tension and Bending Loads, NASA Technical Memorandum, 85793, NASA,1984   
+
 5. 計算に用いる入力データを辞書形式で以下のように準備する。   
 ```python
 data={'a':6e-3,
