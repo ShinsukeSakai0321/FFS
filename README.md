@@ -1,7 +1,7 @@
 # FFSeval
 
 ## Evaluation of fitness for service
-#### Shinsuke Sakai   
+#### [Shinsuke Sakai](https://sites.google.com/view/shinsukesakai/%E3%83%9B%E3%83%BC%E3%83%A0)   
  Emeritus Professor, The University of Tokyo, Japan   
  Visiting Professor, Yokohama National University, Japan
 
@@ -12,6 +12,9 @@
 
 ## 使用プログラム言語
 Python
+
+## ライセンス
+このプロジェクトは，MITライセンスのもとにライセンスが付与される。詳細は[LICENSE](LICENSE)を参照のこと。
 
 ## インストール方法
 ターミナルモードにおいて
