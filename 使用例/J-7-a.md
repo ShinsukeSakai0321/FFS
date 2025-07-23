@@ -7,8 +7,8 @@ data={
     'R':0.01,
     'alpha':5.5,
     'n':7,
-    'S':330,
-    'S0':313.6,
+    'sigma':330,
+    'sigma0':313.6,
     'E':192e3
 }
 J.SetData(data)
