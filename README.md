@@ -81,5 +81,41 @@ K値の解析結果:{'KA': 19.642352887296376, 'KB': 24.08152463982535}
 ```
 登録されている解析公式の一覧は下記コマンドで確認できる。
 ```python
-cls.Registered()
+from FFSeval import FFS as ffs
+help(ffs)
 ```
+この結果以下のような出力が得られる。
+```
+Help on module FFSeval.FFS in FFSeval:
+
+NAME
+    FFSeval.FFS
+
+CLASSES
+    builtins.object
+        Base
+            J_2_k_a
+            J_2_k_b
+            K_1_a_1
+            K_2_a_3
+            K_2_b_2
+            K_2_e_2
+            K_2_k_2
+            L_1_a
+            L_2_b
+        Fatigue
+        Treat
+        dmanage
+    
+    class Base(builtins.object)
+     |  Methods defined here:
+     |  
+     |  CalcKc(self)
+     |  
+ .
+ .
+ ```
+ この出力の中のBaseの直下に書かれている内容が登録されているクラスである。これはテキストの節番号に対応している。ただし，-を_に置き換えている。
+
+ ## 関連サイト
+- [FFSeval PyPl](https://pypi.org/project/FFSeval/)
