@@ -1,0 +1,18 @@
+```python
+from FFSeval import FFS as ffs
+cls=ffs.Treat()
+K=cls.Set('L-7-b')
+data={'a':10,
+      'c':20.,
+      't':20,
+      'w':100.,
+      'P':6e4,
+      'M':8e5,
+      'Sy':380,
+}
+K.SetData(data)
+K.Calc()
+res=K.GetRes()
+res
+#{'Lr': 0.20092140205079428}
+```

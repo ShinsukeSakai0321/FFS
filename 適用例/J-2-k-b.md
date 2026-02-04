@@ -1,0 +1,39 @@
+```python
+import numpy as np
+from FFSeval import FFS as ffs
+cls=ffs.Treat()
+J=cls.Set('J-2-k-b')
+S0=313.6
+E=192.08e3
+R=53
+a=28
+th=a/R
+C=1.176
+m=0.44
+da=0.25e-3
+JR=C*da**m
+data={'R':R,
+    't':9,
+    'theta':th,
+    'M':0,
+    'P':5e5,
+    'n':7.0,
+    'E':E,
+    'Nu':0.3,
+    'Sy':S0,
+    'Su':490.0,
+    'S0':S0,
+    'Case':'Collapse',#塑性崩壊値の計算のとき'Collapse',塑性崩壊軸強度のとき'PR',軸荷重J値のとき'PJ',塑性崩壊曲げ強度のとき'MR',曲げ荷重J値のとき'MJ'
+    'e0':S0/E,
+    'alpha':5.5,
+    'plane':'strain',
+    'JR':JR,
+    'Su':490.0,
+    'J1c':0.784e3
+    }
+J.SetData(data)
+J.Calc()
+rr=J.GetRes()
+rr
+#{'J': 0.28321552706684155}
+```

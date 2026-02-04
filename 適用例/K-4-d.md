@@ -1,0 +1,19 @@
+```python
+from FFSeval import FFS as ffs
+cls=ffs.Treat()
+K=cls.Set('K-4-d')
+data={
+    'a':3.,
+    'c':80.,
+    't':6.,
+    'R':150.,
+    'Dm':100.,
+    'p':10.0,
+    'M':2e5
+    }
+K.SetData(data)
+K.Calc()
+res=K.GetRes()
+res
+#{'KA': 420.5276185751414}
+```
