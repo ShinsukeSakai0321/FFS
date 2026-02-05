@@ -1,3 +1,4 @@
+![K-4-d](./Figures/K-4-d.JPG)
 ```python
 from FFSeval import FFS as ffs
 cls=ffs.Treat()
