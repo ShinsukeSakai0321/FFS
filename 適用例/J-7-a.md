@@ -1,3 +1,4 @@
+![J-7-a](./Figures/J-7-a.JPG)
 ```python
 from FFSeval import FFS as ffs
 cls=ffs.Treat()
@@ -15,4 +16,5 @@ J.SetData(data)
 J.Calc()
 J.GetRes()
 #{'J': 0.2410953125980766}
+
 ```
