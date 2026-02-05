@@ -1,3 +1,4 @@
+![J-2-k-b](./Figures/J-2-k-b.JPG)
 ```python
 import numpy as np
 from FFSeval import FFS as ffs
