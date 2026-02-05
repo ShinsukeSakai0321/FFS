@@ -1,4 +1,4 @@
-![J-2-k-a](./Figures/J-2-k-a.JPG)
+![J-2-k-a](./Figures/J-2-k-a-1.JPG)
 ```python
 import numpy as np
 from FFSeval import FFS as ffs
@@ -56,5 +56,6 @@ rr=J.GetRes()
 rr
 #{'MR': 28274155.089392558, 'M0': 21275930.712715536, 'H1': 0.7468096872575328}
 ```
+
 
 
