@@ -1,3 +1,4 @@
+![L-2-b](./Figures/L-2-b.JPG)
 ```python
 from FFSeval import FFS as ffs
 cls=ffs.Treat()
@@ -15,4 +16,5 @@ L.Calc()
 res=L.GetRes()
 res
 #{'Lr': 0.24457281012056953, 'pc': 32.71009559916394}
+
 ```
