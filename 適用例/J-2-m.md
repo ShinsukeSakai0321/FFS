@@ -1,13 +1,14 @@
 ![J-2-m](./Figures/J-2-m.JPG)
 ```python
 from FFSeval import FFS as ffs
+import numpy as np
 cls=ffs.Treat()
 K=cls.Set('J-2-m')
 data={'R':53,
     't':9,
     'a':3.,
-    'theta':20.,
-    'M':2000,
+    'theta':50*np.pi/180,
+    'M':5e5,
     'n':7.0,
     'E':192.08e3,
     'Nu':0.3,
@@ -26,5 +27,5 @@ K.SetData(data)
 K.Calc()
 res=K.GetRes()
 res
-#{'J': 588.9096048196731}
+#{'J': 0.12157038034631693}
 ```
