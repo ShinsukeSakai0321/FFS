@@ -3,12 +3,12 @@
 from FFSeval import FFS as ffs
 cls=ffs.Treat()
 K=cls.Set('J-1-d')
-data={'a':10,
+data={'a':15,
       'c':30,
       'b':100,
       'L':100.,
       't':40,
-      'P':3.8e7,
+      'P':5.8e4,
       'n':7.0,
       'S0':313.6,
       'plane':'strain',
@@ -21,5 +21,5 @@ K.SetData(data)
 K.Calc()
 res=K.GetRes()
 res
-#{'JA': 3.2536989211433605e+27, 'JB': 3.2536989211433605e+27}
+#{'JA': 133992.29664647309, 'JB': 133992.29664647309}
 ```
